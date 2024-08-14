@@ -1,0 +1,243 @@
+<div class="flex items-center justify-center p-2">
+    <div class="flex __animated __fadeIn __infinite items-center p-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+        role="alert">
+        <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 20 20">
+            <path
+                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+        </svg>
+        <span class="sr-only">Info</span>
+        <div>
+            <span class="font-medium ">PERHATIAN</span> Sinkron Data, maka pada aplikasi ini akan di timpa dari SIPP, jadi nomor Whatsapp / Hape harus diinput kembali
+        </div>
+    </div>
+</div>
+<div class="flex items-center justify-center p-10 p-2">
+
+    <div class="grid  px-4 pt-6 xl:grid-cols-3 xl:gap-2 dark:bg-gray-900">
+
+        <div class="row">
+            <a href="/sipp/sink_pimpinan""
+                class=" mb-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
+                focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2
+                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2" />
+                </svg>
+                &nbsp;Sinkron Pimpinan
+            </a>
+            <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <tbody>
+                        <tr>
+                            <th scope="col" class="px-4 py-4">Ketua </th>
+                            <th scope="col" class="px-4 py-3">: <%= pimpinan['ketua'].nama_gelar %>
+                            </th>
+                            <th class="border border-gray-300 rounded p-3" contenteditable="true"
+                                onblur="updatePhonePimpinan(this,'ketua')">
+                                <%= pimpinan['ketua'].hape %>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col" class="px-4 py-4">Wakil Ketua </th>
+                            <th scope="col" class="px-4 py-3">: <%= pimpinan['wakil'].nama_gelar %>
+                            </th>
+                            <th class="border border-gray-300 rounded p-3" contenteditable="true"
+                                onblur="updatePhonePimpinan(this,'wakil')">
+                                <%= pimpinan['wakil'].hape %>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col" class="px-4 py-4">Panitera</th>
+                            <th scope="col" class="px-4 py-3">: <%= pimpinan['panitera'].nama_gelar %>
+                            </th>
+                            <th class="border border-gray-300 rounded p-3" contenteditable="true"
+                                onblur="updatePhonePimpinan(this,'panitera')">
+                                <%= pimpinan['panitera'].hape %>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col" class="px-4 py-4">Sekretaris</th>
+                            <th scope="col" class="px-4 py-3">: <%= pimpinan['sekretaris'].nama_gelar %>
+                            </th>
+                            <th class="border border-gray-300 rounded p-3" contenteditable="true"
+                                onblur="updatePhonePimpinan(this,'sekretaris')">
+                                <%= pimpinan['sekretaris'].hape %>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <a href="/sipp/sink_hakim""
+                class=" mb -3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
+                focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2
+                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2" />
+                </svg>
+                &nbsp;Sinkron Hakim
+            </a>
+            <div
+                class="mt-3 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <h1 class="mb-3">Hakim Aktif</h1>
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-4 py-4">No.</th>
+                            <th scope="col" class="px-4 py-3">Nama</th>
+                            <th>Whatsapp</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% var nomor=1 %>
+                            <% for(var i=0; i<dataHakim.length; i++) {%>
+                                <% if (dataHakim[i].aktif=='Y' ) {%>
+                                    <tr class="border-b dark:border-gray-700">
+                                        <th scope="row"
+                                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <%= nomor++ %>.
+                                        </th>
+                                        <td class="px-4 py-3">
+                                            <%= dataHakim[i].nama_gelar %>
+                                        </td>
+                                        <td class="border border-gray-300 rounded p-3" contenteditable="true"
+                                            oninput="validateNumberInput(this)"
+                                            onblur="updatePhoneHakim(this,'<%= dataHakim[i].nip%>')">
+                                            <%= dataHakim[i].hape %>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <a href="/sipp/sink_pp""
+                class=" mb -3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
+                focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2
+                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2" />
+                </svg>
+                &nbsp;Sinkron PP
+            </a>
+            <div
+                class="mt-3 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <h1 class="mb-3">PP Aktif</h1>
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-4 py-4">No.</th>
+                            <th scope="col" class="px-4 py-3">Nama</th>
+                            <th scope="col" class="px-4 py-3">Whatsapp</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% var nomor=1 %>
+                            <% for(var i=0; i<dataPP.length; i++) {%>
+                                <% if (dataPP[i].aktif=='Y' ) {%>
+                                    <tr class="border-b dark:border-gray-700">
+                                        <th scope="row"
+                                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <%= nomor++ %>.
+                                        </th>
+                                        <td class="px-4 py-3">
+                                            <%= dataPP[i].nama_gelar %>
+                                        </td>
+                                        <td class="border border-gray-300 rounded p-3" contenteditable="true"
+                                            oninput="validateNumberInput(this)"
+                                            onblur="updatePhonePP(this,'<%= dataPP[i].nip%>')">
+                                            <%= dataPP[i].hape %>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updatePhonePimpinan(el, jabatan) {
+        var hape = el.innerText.trim();
+        var settings = {
+            "url": "/sqlite/update_pimpinan",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+                "jabatan": jabatan,
+                "hape": hape
+            }),
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    }
+    function updatePhoneHakim(el, nip) {
+        var hape = el.innerText.trim();
+        var settings = {
+            "url": "/sqlite/update_hakim",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+                "nip": nip,
+                "hape": hape
+            }),
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    }
+    function updatePhonePP(el, nip) {
+        var hape = el.innerText.trim();
+        var settings = {
+            "url": "/sqlite/update_pp",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+                "nip": nip,
+                "hape": hape
+            }),
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    }
+    function validateNumberInput(el) {
+        el.innerText = el.innerText.replace(/[^0-9]/g, '');
+        const range = document.createRange();
+        const selection = window.getSelection();
+
+        range.selectNodeContents(el);
+        range.collapse(false); // Collapse the range to the end point (false)
+
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+</script>

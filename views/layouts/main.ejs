@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<title>
+    <% if (site.title) %>
+        <%=site.title%>
+</title>
+<%- include('header') %>
+    </head>
+
+    <body
+        class="relative min-h-screen bg-gradient-to-r from-slate-900 to-slate-700 dark:bg-slate-900 text-white drop-shadow-md">
+        <!-- <div class="absolute -z-10 opacity-40 w-full h-full">
+        <video class="min-w-full min-h-full object-cover fixed" src="/video/coding.mp4" type="video/mp4" autoplay muted
+            loop></video>
+    </div> -->
+        <header class="text-gray-600 body-font">
+            <%- include('megamenu')%>
+        </header>
+        <div class="p-10 pt-5">
+            <%- body %>
+        </div>
+        <div class="pb-20"></div>
+
+        <%- include('footer') %>
+    </body>
+
+    <%- include('./script.ejs') %>
+
+    <%- include('confirm_logout') %>
+    <%- include('modal_login') %>
+
+</html>

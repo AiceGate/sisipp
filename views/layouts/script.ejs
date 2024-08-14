@@ -1,0 +1,42 @@
+<script src="/socket.io/socket.io.min.js"></script>
+<script>
+    const socket = io.connect(vhost);
+    $(document).ready(function () {
+        socket.on("whatsapp-connected", (e) => {
+            window.location.href = '/wa'
+        })
+        socket.on("message", (e) => {
+            console.log(
+                '🚀 ~ message from Server : ',
+                e
+            );
+
+            Toastify({
+                text: e,
+                className: "info",
+                style: {
+                    background: "linear-gradient(to bottom, #0488c6, #1849f7)",
+                }
+            }).showToast();
+
+        });
+        socket.on("connection-status", (event) => {
+            $("#cancelqr").html(`Alert Status!`);
+            if (event.result) {
+                $("#socket-qr").html(`<center><p>${event.result}</p></center>`);
+                show_notification('Please scanQR')
+            }
+        });
+    });
+
+</script>
+
+<!-- // <script>
+//     Toastify({
+//         text: "This is a toast sadasdasdasd",
+//         className: "info",
+//         style: {
+//             background: "linear-gradient(to bottom, #b604c6, #1849f7)",
+//         }
+//     }).showToast();
+// </script> -->
